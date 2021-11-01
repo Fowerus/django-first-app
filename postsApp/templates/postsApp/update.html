@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+{% load crispy_forms_tags %}
+
+
+{% block title %}Create a new post{% endblock %}
+	
+{% block secondary-buttons %}
+	<a class = 'btn btn-dark btn-secondary' href="{% url 'posts_main' %}">Come back</a>
+{% endblock %}
+
+{% block body %}
+	<form action="" class = 'form-control form' method="POST">
+	  {% csrf_token %}
+	  {{form|crispy}}
+	  <input type="submit" value="Update post" class = 'btn btn-primary form-btn' />
+	</form>
+{% endblock %}

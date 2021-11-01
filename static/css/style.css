@@ -1,0 +1,193 @@
+body{
+	max-width: 1200px;
+	margin:0 auto 0;
+	padding: 0;
+}
+header{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+header .hgroup{
+	margin:25px 0 25px;
+}
+header .hgroup h1{
+	font-size:50px;
+}
+header .current_user_info{
+	position: absolute;
+	top: 0;
+	right:0;
+	margin:15px 0 15px 15px;
+}
+header .current_user_info .current_user{
+	font-size: 35px;
+	color:black;
+	text-decoration:none;
+	cursor:pointer;
+}
+header .current_user_info .hide_user_list{
+	display: none;
+}
+header .current_user_info .user_list{
+	padding:0;
+}
+header .current_user_info .user_list .item{
+	margin:5px auto 5px
+}
+header .current_user_info .user_list .item a{
+	text-decoration: none;
+	color:black;
+	font-size:20px;
+}
+.body{
+	max-width: 1100px;
+	margin:25px auto 0;
+}
+
+
+
+/*postsApp*/
+.body .posts-content{
+	display: flex;
+	justify-content:space-between;
+	margin:25px auto 0;
+}
+.body .posts-content .posts-list{
+	max-width: 800px;
+	width:100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+body .posts-content .posts-list .post{
+	max-width: 750px;
+	min-width: 350px;
+	min-height: 400px;
+	max-height: 400px;
+	height:100%;
+	width:100%;
+	position: relative;
+	border:1px solid grey;
+	border-radius: 10px;
+	padding:25px 15px 25px 15px;
+	margin-bottom: 25px;
+}
+body .posts-content .posts-list .post h6{
+	width:inherit;
+	margin:0 0 25px 0;
+	padding:0;
+}
+body .posts-content .posts-list .post .title{
+	font-size:25px;
+	position:relative;
+	margin:0 0 25px 0;
+}
+body .posts-content .posts-list .post .text{
+	font-size:15px;
+	max-height:215px;
+	overflow:hidden;
+}
+body .posts-content .posts-list .post .optional-block{
+	position: absolute;
+	bottom:0;
+	display: flex;
+	justify-content: space-between;
+	width:calc(100% - 30px);
+}
+body .posts-content .posts-list .post .optional-block .secondary_info{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width:65%;
+}
+body .posts-content .posts-list .post .optional-block .post_buttons{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width:35%;
+	height:100%;
+}
+body .posts-content .posts-list .post .optionals-block .topic{
+	font-size
+}
+body .posts-content .posts-list .post .optionals-block .author{
+	font-size
+}
+body .posts-content .posts-list .post .optionals-block .update{
+	font-size
+}
+
+body .posts-content .current_posts-list{
+	display: block;
+	margin:0 auto 0;
+	max-width: 1000px!important;
+}
+body .posts-content .current_posts-list .current_post{
+	max-width: 100%;
+	min-height: 100%;
+	max-height: 100%;
+	width:100%;
+	height:100%;
+	margin: 0 auto 25px;
+	border:none;
+}
+body .posts-content .current_posts-list .current_post .title{
+	font-size:35px;
+}
+body .posts-content .current_posts-list .current_post .text{
+	font-size:20px;
+	max-height:100%;
+	overflow:visible;
+}
+body .posts-content .current_posts-list .current_post .optional-block .topic{
+	font-size:17px;
+}
+body .posts-content .current_posts-list .current_post .optional-block .author{
+	font-size:17px;
+}
+body .posts-content .current_posts-list .current_post .optional-block .update{
+	font-size:17px;
+}
+.body .posts-content .topic-btn{
+	color:white;
+}
+.body .posts-content .topic-btn{
+	color:white;
+}
+.body .posts-content .topic-current-btn{
+  	background-color: #218838;
+  	border-color: #1e7e34;
+}
+.body .posts-content .topic-btn:hover{
+	color:white;
+}	
+.body .posts-content .topics-list{
+	text-align: left;
+	display: flex;
+	flex-direction: column;
+}
+.body .posts-content .topics-list a{
+	margin:0 0 25px;
+}
+.body .posts-content .form{
+	padding: 25px;
+}
+.body .posts-content .form input,select,textarea{
+	margin:0 0 25px;
+}
+.body .secondary-buttons .btn-secondary{
+	font-size:15px;
+}
+
+
+
+/*usersApp*/
+.body .posts-content form ul.messages .warning{
+	color:#cc3300;
+}
+.body .posts-content form ul.messages .error{
+	color:rgb(250,10,0);
+	text-decoration: underline;
+}

@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+
+
+{% block title %}Post {{post.id}}{% endblock %}
+	
+{% block secondary-buttons %}
+	<a class = 'btn btn-dark btn-secondary' href="{% url 'posts_main' %}">Come back</a>
+{% endblock %}
+
+{% block body %}
+	<div class = 'current_posts-list posts-list'>
+		<div class="current_post post">
+			<h6 class = 'title'>{{post.title}}</h6>
+			<h6 class = 'text'>{{post.text}}</h6>
+			<div class="optional-block">
+				<h6 class = 'topic'>Topic: <strong>{{post.topic}}</strong></h6>
+				<h6 class = 'author'>Author: <strong>{{post.author}}</strong></h6>
+				<h6 class = 'update'>Last update: <strong>{{post.date_update|date:"d-m-Y"}}</strong></h6>
+			</div>
+		</div>
+	</div>
+{% endblock %}
