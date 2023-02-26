@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM="
+			  crossorigin="anonymous" defer></script>
+	<script type="text/javascript" src="{% static 'js/script.js' %}" defer></script>
+
+	<title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+	<header class = 'container'>
+		<div class = 'hgroup'>
+			<h1>Fowerus' first django app</h1>
+		</div>
+		{% if request.user.is_authenticated %}
+			<div class="current_user_info">
+				<h1 class = 'current_user'>{{request.user.login}}</h1>
+				<ul class="user_list hide_user_list">
+					<li class="item"><a href="{% url 'user_profile' request.user.login%}">Profile</a></li>
+					<li class="item"><a href="{% url 'user_logout' %}">Logout</a></li>
+				</ul>
+			</div>
+		{% endif %}
+		<div class = 'nav-bar'>
+			<a class = 'btn btn-dark' href="{% url 'posts_main' %}">Posts</a>
+			<a class = 'btn btn-dark' href="/aboutUs/">About us</a>
+		</div>
+	</header>
+	<hr>
+	<section class = 'container body'>
+		<div class = 'secondary-buttons'>
+			{% block secondary-buttons %}
+			{% endblock %}
+		</div>
+		<div class = 'posts-content'>
+			{% block body %}
+			{% endblock %}
+		</div>
+	</section>
+</body>
+</html>

@@ -1,0 +1,45 @@
+{% extends 'base.html'%}
+
+
+{% block title %}Posts - {{current_topic.name}}{% endblock %}
+	
+{% block secondary-buttons %}
+	<a class = 'btn btn-dark btn-secondary' href="{% url 'posts_create' %}">Create new post</a>
+	<a class = 'btn btn-dark btn-secondary' href="{% url 'posts_user' request.user.login %}">Your posts</a>
+{% endblock %}
+
+{% block body %}
+	<div class = 'topics-list'>
+		{% for topic in all_topics%}
+			<a class = 'btn btn-success {% if current_topic.id == topic.id %}topic-current-btn{% endif %} topic-btn' href = "{% url 'posts_topic' topic.name %}">{{topic.name}}</a>
+		{% endfor %}
+	</div>
+	<div class = 'posts-list'>
+		{% for post in all_posts %}
+			<div class="post">
+
+				<h6 class = 'title'>{{post.title}}</h6>
+				<h6 class = 'text'>{{post.text}}</h6>
+
+				<div class="optional-block">
+
+					<div class="secondary_info">
+						<h6 class = 'topic'>Topic: <strong>{{post.topic}}</strong></h6>
+						<h6 class = 'author'>Author: <strong>{{post.author}}</strong></h6>
+						<h6 class = 'update'>Last update: {{post.date_update|date:"d-m-Y"}}</h6>
+					</div>
+
+					<div class="post_buttons">
+						<a class = 'btn btn-primary' href="{% url 'posts_post' post.id%}">Read</a>
+						{% if request.user.login == post.author %}
+							<a class = 'btn btn-warning' href="{% url 'posts_update' post.id%}">Update</a>
+							<a class = 'btn btn-danger' href="{% url 'posts_delete' post.id%}">Delete</a>
+						{% endif %}
+					</div>
+
+				</div>
+
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}
